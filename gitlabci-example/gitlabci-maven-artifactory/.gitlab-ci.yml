@@ -15,10 +15,10 @@ before_script:
 build:
   script:
     # Run the MVN command
-    - ./jfrog rt mvn "clean install" configuration.yml --build-name=gitlabci-maven-artifactory1 --build-number=$CI_JOB_ID
+    - ./jfrog rt mvn "clean install" configuration.yml --build-name=gitlabci-maven-artifactory2 --build-number=$CI_JOB_ID
     # Collect the environment variables
-    - ./jfrog rt bce gitlabci-maven-artifactory1 $CI_JOB_ID
+    - ./jfrog rt bce gitlabci-maven-artifactory2 $CI_JOB_ID
     # Pass the build information to Artifactory
-    - ./jfrog rt bp gitlabci-maven-artifactory1 $CI_JOB_ID
+    - ./jfrog rt bp gitlabci-maven-artifactory2 $CI_JOB_ID
   only:
     - master
